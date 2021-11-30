@@ -10,6 +10,7 @@ function App() {
     const dinoFetcher = async () => {
       const response = await fetchDino()
       const json = await response.json()
+      console.log(json)
       setDino(json.dino)
     }
     dinoFetcher()
