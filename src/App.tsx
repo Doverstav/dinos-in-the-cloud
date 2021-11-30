@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import dino from './dino.svg';
 import './App.css';
+import { fetchDino } from './apis/dinos.api';
 
 function App() {
+  useEffect(() => {
+    fetchDino()
+  })
+
   return (
     <div className="App">
       <header className="App-header">
