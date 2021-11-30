@@ -4,5 +4,6 @@ export const onRequestGet = () => {
     dino: dinos[Math.random() * dinos.length]
   }
 
-  return new Response(JSON.stringify(response), { headers: { "Content-Type": "application/json" } })
+  //return new Response(JSON.stringify(response), { headers: { "Content-Type": "application/json" } })
+  return new Response(JSON.stringify({dino: "T-Rex"}), { headers: { "Content-Type": "application/json" } })
 }
