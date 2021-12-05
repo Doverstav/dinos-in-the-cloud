@@ -4,7 +4,7 @@ import "./App.css";
 import { fetchDino, postDino } from "./apis/dinos.api";
 
 function App() {
-  const [randomDino, setDino] = useState<string>();
+  const [randomDino, setDino] = useState<string>("");
 
   useEffect(() => {
     const dinoFetcher = async () => {
@@ -21,7 +21,7 @@ function App() {
   }, []);
 
   const likeDino = async () => {
-    const response = await postDino('123456', dino)
+    const response = await postDino('123456', randomDino)
     const json = await response.json()
 
     console.log(json)
