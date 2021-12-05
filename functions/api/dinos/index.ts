@@ -1,3 +1,14 @@
+export enum Dinos {
+  Stegosaurus = "Stegosaurus",
+  Velociraptor = "Velociraptor",
+  TyrannosaurusRex = "Tyrannosaurus Rex",
+  Triceratops = "Triceratops",
+}
+
+export interface dinoResponse {
+  dino: Dinos
+}
+
 export const onRequestGet = () => {
   const dinos = ["Velociraptor", "Stegosaurus", "Tyrannosaurus Rex", "Triceratops"]
   const response = {
