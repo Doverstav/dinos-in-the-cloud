@@ -32,8 +32,8 @@ function App() {
       <header className="App-header">
         <img src={dino} className="App-logo" alt="logo" />
         <p>The dinosaur you get is: {randomDino}</p>
+        <button onClick={likeDino}>I like this dinosaur!</button>
       </header>
-      <button onClick={likeDino}></button>
     </div>
   );
 }
