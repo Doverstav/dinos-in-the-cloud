@@ -1,5 +1,3 @@
-import { env } from "process"
-
 interface UserData {
   dinosLiked: string[]
   dinosLikedAmount: number
@@ -12,8 +10,9 @@ interface RequestBody {
 export const onRequestPost = async (context) => {
   const {
     params,
-    request
-  }: { request: Request, params: string } = context
+    request,
+    env
+  }: { request: Request, params: string, env: any } = context
 
   const body = (await request.json()) as RequestBody
   const currentUserData = (await env.DINOS.get(params, { type: "json" })) as UserData

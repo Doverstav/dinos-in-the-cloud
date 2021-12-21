@@ -3,6 +3,7 @@ import dino from "./dino.svg";
 import "./App.css";
 import { fetchDino, postDino } from "./apis/dinos.api";
 import { useUUID } from "./hooks/useUUID";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [randomDino, setDino] = useState<string>("");
@@ -30,13 +31,22 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={dino} className="App-logo" alt="logo" />
-        <p>The dinosaur you get is: {randomDino}</p>
-        <button onClick={likeDino}>I like this dinosaur!</button>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="App">
+              <header className="App-header">
+                <img src={dino} className="App-logo" alt="logo" />
+                <p>The dinosaur you get is: {randomDino}</p>
+                <button onClick={likeDino}>I like this dinosaur!</button>
+              </header>
+            </div>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
