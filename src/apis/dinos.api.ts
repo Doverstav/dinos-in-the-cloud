@@ -9,6 +9,16 @@ export const fetchDino = async (): Promise<Response> => {
   }
 }
 
+export const fetchLikedDinos = async (id: string): Promise<Response> => {
+  try {
+    const response = await fetch(`https://dinoworkers-in-the-cloud.doverstav.workers.dev/api/dinos/${id}`)
+    return response
+  } catch (error) {
+    console.error(error)
+    throw new Error("Error getting liked dinos")
+  }
+}
+
 export const postDino = async (id: string, dino: string): Promise<Response> => {
   try {
     const response = await fetch(`https://dinoworkers-in-the-cloud.doverstav.workers.dev/api/dinos/${id}`, {
