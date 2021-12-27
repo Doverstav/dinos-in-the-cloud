@@ -20,12 +20,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.dino-header {
+  font-size: 2em;
+  margin-bottom: 0;
+}
+
+.dino-description {
+  font-size: 1.1em;
+}
+
+.dino-button {
+  margin: 8px
+}
+
+.dino-header {
+  margin-bottom: 8px;
+}
+
+.dino-list {
+  margin-top: 0;
+  display: inline-block;
+  text-align: left;
 }
 
 @keyframes App-logo-spin {

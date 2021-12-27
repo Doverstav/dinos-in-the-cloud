@@ -49,13 +49,21 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={dino} className="App-logo" alt="logo" />
-        <p>The dinosaur you get is: {randomDino?.Name}</p>
-        <p>{randomDino?.Description}</p>
-        <button onClick={() => likeDino(userId, randomDino?.Name)}>
+        <h1 className="dino-header">
+          The dinosaur you get is: {randomDino?.Name}
+        </h1>
+        <p className="dino-description">{randomDino?.Description}</p>
+        <button className="dino-button" onClick={() => updateDinos(userId)}>
+          I don't like this dinosaur, get me a new one!
+        </button>
+        <button
+          className="dino-button"
+          onClick={() => likeDino(userId, randomDino?.Name)}
+        >
           I like this dinosaur!
         </button>
-        <p>Dinos you like are:</p>
-        <ul>
+        <h2 className="dino-header">Dinos you like are:</h2>
+        <ul className="dino-list">
           {likedDinos.map((likedDino) => (
             <li>{likedDino}</li>
           ))}
